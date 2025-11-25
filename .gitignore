@@ -1,0 +1,16 @@
+# dbt
+target/
+dbt_packages/
+logs/
+*.pyc
+__pycache__/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
