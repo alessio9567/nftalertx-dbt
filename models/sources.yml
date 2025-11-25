@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: nft_project
+    tables:
+      - name: historical_nft_data
+        description: "Raw NFT floor price history"
+        columns:
+          - name: slug
+            tests: [not_null]
+          - name: chain
+            tests: [not_null]
+          - name: latest_floor_ts
+            tests: [not_null]
+
+      - name: nft_collections
+        description: "NFT Collection metadata"
+        columns:
+          - name: slug
+            tests: [not_null]
+          - name: chain
+            tests: [not_null]
+
+      - name: pipeline_last_run
+        description: "Audit table tracking last SMA/GC computation"
+        columns:
+          - name: slug
+          - name: chain
+          - name: last_run_ts
